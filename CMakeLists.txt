@@ -9,11 +9,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 # Get the path to the Vulkan SDK
-if(NOT DEFINED ENV{VULKAN_SDK})
-    message(FATAL_ERROR "VULKAN_SDK environment variable is not set, or VulkanS SDK is not installed.")
-else()
-    set(VULKAN_SDK $ENV{VULKAN_SDK})
-    message(STATUS "VULKAN_SDK ENV: $ENV{VULKAN_SDK}")
+if(WIN32)
+    if(NOT DEFINED ENV{VULKAN_SDK})
+        message(FATAL_ERROR "VULKAN_SDK environment variable is not set, or VulkanS SDK is not installed.")
+    else()
+        set(VULKAN_SDK $ENV{VULKAN_SDK})
+        message(STATUS "VULKAN_SDK ENV: $ENV{VULKAN_SDK}")
+    endif()
+elseif(UNIX)
+    set(VULKAN_SDK /usr/)
 endif()
 ##############
 # Vulkan SDK #
