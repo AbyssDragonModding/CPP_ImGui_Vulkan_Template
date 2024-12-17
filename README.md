@@ -22,3 +22,9 @@ NOTE: Make sure the vulkan SDK is installed first, if your on windows it should 
 - Once you open up the project in Visual Studio set the "ProjectName" project as the default project.
 - Open Up the MainWindow.h and MainWindow.cpp class files
 - All your menu code goes in theose two files
+
+## Directory Structure
+- Project/src: Source file directory for main.cpp and MainWindow.cpp
+- Project/include: Header file location for the project, MainWindow.h
+- Project/build: Build directory for cmake
+- Project/libs: Library download folder for GLFW and ImGui
