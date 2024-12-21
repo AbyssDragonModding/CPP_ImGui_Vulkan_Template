@@ -2,7 +2,7 @@
 
 cmake_minimum_required(VERSION 3.15)
 include(FetchContent)
-project("ImGui_Vulkan")
+project("ImGui_Style_Editor")
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -79,10 +79,6 @@ if(NOT EXISTS ${GLFW_LIB_DIR})
     )
     FetchContent_MakeAvailable(glfw)
 endif()
-
-# Build the GLFW library
-message(STATUS "Building GLFW Library")
-add_subdirectory(${GLFW_LIB_DIR})
 
 #############################################
 # add the executable and link the libraries #
