@@ -6,7 +6,7 @@ project("ImGui_Vulkan")
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
+set(PROJ_DEPS_DIR ${CMAKE_SOURCE_DIR}/deps)
 
 # Get the path to the Vulkan SDK
 if(WIN32)
@@ -38,7 +38,7 @@ ${VULKAN_SDK}/Include/vk_video
 ##############################
 # Download the IMGUI Library #
 ##############################
-set(IMGUI_LIB_DIR ${CMAKE_SOURCE_DIR}/libs/imgui)
+set(IMGUI_LIB_DIR ${PROJ_DEPS_DIR}/imgui)
 if(NOT EXISTS ${IMGUI_LIB_DIR})
     message(STATUS "Downloading IMGUI Library")
     FetchContent_Declare(
@@ -68,7 +68,7 @@ ${IMGUI_LIB_DIR}/backends
 #############################
 # Download the GLFW Library #
 #############################
-set(GLFW_LIB_DIR ${CMAKE_SOURCE_DIR}/libs/glfw)
+set(GLFW_LIB_DIR${PROJ_DEPS_DIR}/glfw)
 if(NOT EXISTS ${GLFW_LIB_DIR})
     message(STATUS "Downloading GLFW Library")
     FetchContent_Declare(
