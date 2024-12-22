@@ -2,7 +2,7 @@
 
 cmake_minimum_required(VERSION 3.15)
 include(FetchContent)
-project("ImGui_Style_Editor")
+project("ImGui_Vulkan")
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
